@@ -1,0 +1,26 @@
+import "./App.css";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./pages/home";
+import Layout from "./components/layout/index";
+import Districts from "./pages/districts";
+import District from "./pages/district";
+import Place from "./pages/place";
+import NotFound from "./pages/notFound";
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="districts" element={<Districts />} />
+        <Route path="districts/:districtId" element={<District />} />
+        <Route
+          path="districts/:districtId/places/:placeId"
+          element={<Place />}
+        />
+        <Route path="home" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
+  );
+}
+export default App;
