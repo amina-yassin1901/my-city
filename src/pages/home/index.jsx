@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./styles.css";
+import {useTitle } from "../../useTitle";
 function Home() {
+  useTitle("Home");
   return (
     <div className="home">
       <div className="hero">

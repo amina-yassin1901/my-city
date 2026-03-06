@@ -1,7 +1,10 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { districtsData } from "../../data.js";
+import { useTitle, capitalize } from "../../useTitle.js";
 const Place = () => {
   const { districtId, placeId } = useParams();
+  const formattedName = capitalize(placeId);
+  useTitle(`${formattedName}`);
   // Ищем район
   const district = districtsData.find((d) => d.id === districtId);
   // Если район не найден - 404

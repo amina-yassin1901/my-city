@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { districtsData } from "../../data.js";
+import { useTitle } from "../../useTitle.js";
 function Districts() {
+  useTitle("Districts");
   return (
     <div className="districts">
       <h1>Районы города</h1>

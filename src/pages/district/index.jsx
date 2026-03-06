@@ -1,8 +1,11 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { districtsData } from "../../data.js";
+import { capitalize, useTitle } from "../../useTitle.js";
 function District() {
   const { districtId } = useParams();
   const district = districtsData.find((district) => district.id === districtId);
+  const formattedName = capitalize(districtId);
+  useTitle(`${formattedName}`);
   return (
     <div className="district-page">
       <div className="district-header">
